@@ -13,8 +13,51 @@ body {
 .calculator-grid {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center; /*align items to align content*/
   min-height: 100vh; /*vew height, 100 vie height gonna fill 100% of the height all the time */
+  grid-template-columns: repeat(4, 100px);
+  /*4 columns, all 100px wide*/
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px); /*display row is 120px at minimum and auto so it can grow depending on how how many numbers there are. *repeat 5 coz u have 5 rows below display*/
+}
+.calculator-grid > button /*select all the buttons inside calculator grid*/ {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none; /*browser applies outline by default*/
+  background-color: rgba(255, 255, 255, 0.75);
+  /*rgba- red blue green alpha/transparency. sets background color and its opacity.*/
+}
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-column: span 2; /*make the columns span 2 colmns*/
+}
+
+.output {
+  grid-column: 1 / -1; /*make it span the entire width from left to right, first to last column*/
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex; /*align text inside cntainer*/
+  align-items: flex-end; /*on the right side*/
+  justify-content: space-around; /* space-between - space out as far apart as possible between elements*******
+  changed to space-around to push vertical elements closer to each other than near the edges
+  */
+  flex-direction: column;
+  /*so theyre aligned vertically instead of horizontally*/
+  padding: 10px;
+  word-wrap: break-word; /*b able to break a word in the middle of it, not just end or space*/
+  word-break: break-all; /*be able to break all words*/
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
 }
 
 /* box-sizing: border-box 
