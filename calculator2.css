@@ -1,0 +1,33 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  font-family: Jetbrains Mono;
+  font-weight: bold;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /*vew height, 100 vie height gonna fill 100% of the height all the time */
+}
+
+/* box-sizing: border-box 
+When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).
+The box-sizing property allows us to include the padding and border in an element's total width and height.
+
+If you set box-sizing: border-box; on an element, padding and border are included in the width and height:
+Since the result of using the box-sizing: border-box; is so much better, many developers want all elements on their pages to work this way.
+
+The code below ensures that all elements are sized in this more intuitive way. Many browsers already use box-sizing: border-box; for many form elements (but not all - which is why inputs and text areas look different at width: 100%;). 
+Applying this to all elements is safe and wise:
+Example
+-* {
+  box-sizing: border-box;
+} 
+*/
